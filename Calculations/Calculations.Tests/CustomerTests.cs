@@ -4,12 +4,20 @@ using Xunit;
 
 namespace Calculations.Tests
 {
+    [Collection("Customer")]
     public class CustomerTests
     {
+        private readonly CustomerFixture _customerFixture;
+
+        public CustomerTests(CustomerFixture customerFixture)
+        {
+            _customerFixture = customerFixture;
+        }
+
         [Fact]
         public void CheckNameNotEmpty()
         {
-            var customer = new Customer();
+            var customer = _customerFixture.Cust;
             Assert.NotNull(customer.Name);
             Assert.False(string.IsNullOrEmpty(customer.Name));
         }
