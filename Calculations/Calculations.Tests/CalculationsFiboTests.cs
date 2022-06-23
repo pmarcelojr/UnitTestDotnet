@@ -69,5 +69,15 @@ namespace Calculations.Tests
 
             _testOutputHelper.WriteLine("End");
         }
+
+        [Theory]
+        [InlineData(1, true)]
+        [InlineData(2, false)]
+        public void IsOdd_TestOddAndEven(int value, bool expected)
+        {
+            var calc = new CalculationsFibo();
+            var result = calc.IsOdd(value);
+            Assert.Equal(expected, result);
+        }
     }
 }

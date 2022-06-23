@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xunit;
 
 namespace Calculations.Tests
 {
-    class CustomerFixtureCollection
+    [CollectionDefinition("Customer")]
+    public class CustomerFixtureCollection : ICollectionFixture<CustomerFixture>
     {
     }
 }
