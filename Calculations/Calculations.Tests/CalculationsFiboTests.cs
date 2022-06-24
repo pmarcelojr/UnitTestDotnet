@@ -4,6 +4,7 @@ using Calculations.Models;
 using Xunit.Abstractions;
 using System;
 using System.IO;
+using Calculations.Tests.Share;
 
 namespace Calculations.Tests
 {
@@ -71,8 +72,7 @@ namespace Calculations.Tests
         }
 
         [Theory]
-        [InlineData(1, true)]
-        [InlineData(2, false)]
+        [MemberData(nameof(TestDataShare.IsOddOrEvenData), MemberType = typeof(TestDataShare))]
         public void IsOdd_TestOddAndEven(int value, bool expected)
         {
             var calc = new CalculationsFibo();
