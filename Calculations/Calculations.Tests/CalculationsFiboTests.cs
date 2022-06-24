@@ -72,7 +72,8 @@ namespace Calculations.Tests
         }
 
         [Theory]
-        [MemberData(nameof(TestDataShare.IsOddOrEvenExternalData), MemberType = typeof(TestDataShare))]
+        //[MemberData(nameof(TestDataShare.IsOddOrEvenExternalData), MemberType = typeof(TestDataShare))]
+        [IsOddOrEvenData]
         public void IsOdd_TestOddAndEven(int value, bool expected)
         {
             var calc = new CalculationsFibo();
