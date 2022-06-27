@@ -1,15 +1,14 @@
 using Moq;
-using SproutClass;
 using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace SprountClass.Test
+namespace SproutClass.Test
 {
     public class EmployeesTest
     {
         [Fact]
-        public void GetEmployeeData_ReturnsSalaries()
+        public void GetEmployeesData_ReturnsSalaries()
         {
             var currentDataObject = new Mock<IEmployeeService>();
             currentDataObject.Setup(x => x.GetEmployeesData()).Returns(new List<Employee>() { new Employee { UniqueId = 1, Salary = 100 } });
